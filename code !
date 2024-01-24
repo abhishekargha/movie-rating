@@ -1,0 +1,1101 @@
+
+C:\Users\Abhishek Choudhury>python3
+Python 3.11.7 (tags/v3.11.7:fa7a6f2, Dec  4 2023, 19:24:49) [MSC v.1937 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> import pandas as pd
+>>> df = pd.read_csv("movies.csv")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\io\parsers\readers.py", line 1024, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\io\parsers\readers.py", line 618, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\io\parsers\readers.py", line 1618, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\io\parsers\readers.py", line 1896, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 574, in pandas._libs.parsers.TextReader.__cinit__
+  File "parsers.pyx", line 663, in pandas._libs.parsers.TextReader._get_header
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2053, in pandas._libs.parsers.raise_parser_error
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe1 in position 76763: invalid continuation byte
+>>> import pandas as pd
+>>> df = pd.read_csv("movies.csv", encoding="latin-1")
+>>> # Fill missing values with linear interpolation
+>>> df_filled = df.interpolate()
+<stdin>:1: FutureWarning: DataFrame.interpolate with object dtype is deprecated and will raise in a future version. Call obj.infer_objects(copy=False) before interpolating instead.
+>>> # Fill missing values with a regression model
+>>> from sklearn.linear_model import LinearRegression
+>>> model = LinearRegression()
+>>> model.fit(X_train, y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'X_train' is not defined
+>>> df_filled = df.fillna(model.predict(X_test))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'X_test' is not defined
+>>> exit()
+
+
+C:\Users\Abhishek Choudhury>import numpy as np
+'import' is not recognized as an internal or external command,
+operable program or batch file.
+
+
+C:\Users\Abhishek Choudhury>python3
+Python 3.11.7 (tags/v3.11.7:fa7a6f2, Dec  4 2023, 19:24:49) [MSC v.1937 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy as np
+>>> import pandas as pd
+>>> # Fill missing values with linear interpolation
+>>> df_filled = df.interpolate()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'df' is not defined
+>>> # Fill missing values with a regression model
+>>> from sklearn.linear_model import LinearRegression
+>>> model = LinearRegression()
+>>> model.fit(X_train, y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'X_train' is not defined
+>>> df_filled = df.fillna(model.predict(X_test))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'df' is not defined
+>>> df = pd.read_csv("movies.csv", encoding="latin-1")
+>>> median_rating = df['Rating'].median()
+>>> median_votes = df['Votes'].median()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\series.py", line 6539, in median
+    return NDFrame.median(self, axis, skipna, numeric_only, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 12424, in median
+    return self._stat_function(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 12370, in _stat_function
+    return self._reduce(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\series.py", line 6437, in _reduce
+    return op(delegate, skipna=skipna, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\nanops.py", line 147, in f
+    result = alt(values, axis=axis, skipna=skipna, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\nanops.py", line 787, in nanmedian
+    raise TypeError(f"Cannot convert {values} to numeric")
+TypeError: Cannot convert [nan '8' nan ... nan nan '20'] to numeric
+>>> import pandas as pd
+>>>
+>>> # Convert to numeric
+>>> df['rating'] = pd.to_numeric(df['rating'], errors='coerce')
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'rating'
+>>> df['votes'] = pd.to_numeric(df['votes'], errors='coerce')
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'votes'
+>>>
+>>> # Now calculate the median
+>>> median_rating = df['rating'].median()
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'rating'
+>>> median_votes = df['votes'].median()
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'votes'
+>>>
+>>> # Fill NaN values with the median
+>>> df['rating'].fillna(median_rating, inplace=True)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'rating'
+>>> df['votes'].fillna(median_votes, inplace=True)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'votes'
+>>> df = df.rename(columns={'Rating': 'rating', 'Votes': 'votes'})
+>>> import pandas as pd
+>>>
+>>> # Convert to numeric
+>>> df['rating'] = pd.to_numeric(df['rating'], errors='coerce')
+>>> df['votes'] = pd.to_numeric(df['votes'], errors='coerce')
+>>>
+>>> # Now calculate the median
+>>> median_rating = df['rating'].median()
+>>> median_votes = df['votes'].median()
+>>>
+>>> # Fill NaN values with the median
+>>> df['rating'].fillna(median_rating, inplace=True)
+<stdin>:1: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+
+>>> df['votes'].fillna(median_votes, inplace=True)
+>>> # Print the first 5 rows of the data
+>>> print(data.head())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'data' is not defined
+>>>
+>>> # Get a quick statistical summary of the data
+>>> print(data.describe())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'data' is not defined
+>>> print(df.head())
+                                 Name    Year  ...             Actor 2          Actor 3
+0                                         NaN  ...              Birbal  Rajendra Bhatia
+1  #Gadhvi (He thought he was Gandhi)  (2019)  ...      Vivek Ghamande    Arvind Jangid
+2                         #Homecoming  (2021)  ...   Plabita Borthakur       Roy Angana
+3                             #Yaaram  (2019)  ...          Ishita Raj  Siddhant Kapoor
+4                   ...And Once Again  (2010)  ...  Rituparna Sengupta      Antara Mali
+
+
+[5 rows x 10 columns]
+>>> median_rating = df['rating'].median
+>>> median_votes = df['votes'].median()
+>>> median_rating = df['rating'].median()
+>>> df['rating'].fillna(median_rating, inplace=True)
+<stdin>:1: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+
+>>> df['votes'].fillna(median_votes, inplace=True)
+>>> df_encoded = pd.get_dummies(df, columns=['Genre', 'Director', 'Actor 1', 'Actor 2', 'Actor 3']
+... from sklearn.preprocessing import MinMaxScaler
+  File "<stdin>", line 2
+    from sklearn.preprocessing import MinMaxScaler
+    ^^^^
+SyntaxError: invalid syntax
+>>> from sklearn.preprocessing import MinMaxScaler
+>>> scaler = MinMaxScaler()
+>>> df[['year', 'duration']] = scaler.fit_transform(df[['year', 'duration']])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4096, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 6199, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 6248, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['year', 'duration'], dtype='object')] are in the [columns]"
+>>> df[['Year', 'Duration']] = scaler.fit_transform(df[['Year','Duration']])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_set_output.py", line 273, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 1061, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\preprocessing\_data.py", line 450, in fit
+    return self.partial_fit(X, y)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 1351, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\preprocessing\_data.py", line 490, in partial_fit
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 951, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_array_api.py", line 521, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 2150, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '(2019)'
+>>> df['Year'] = df['Year'].str.replace('(', '')
+>>> df['Year'] = df['Year'].str.replace(')', '')
+>>> df['Year'] = pd.to_numeric(df['Year']
+...
+...
+... from sklearn.preprocessing import StandardScaler
+  File "<stdin>", line 4
+    from sklearn.preprocessing import StandardScaler
+    ^^^^
+SyntaxError: invalid syntax
+>>> from sklearn.preprocessing import StandardScaler
+>>> scaler = StandardScaler()
+>>> df[['Year', 'Duration']] = scaler.fit_transform(df[['Year', 'Duration']]
+... import numpy as np
+  File "<stdin>", line 2
+    import numpy as np
+    ^^^^^^
+SyntaxError: invalid syntax
+>>>
+>>> # Assuming df is your DataFrame and 'Rating' and 'Votes' are your columns
+>>>
+>>> # Calculate IQR for 'Rating' and 'Votes'
+>>> Q1_rating = df['Rating'].quantile(0.25)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> Q3_rating = df['Rating'].quantile(0.75)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> IQR_rating = Q3_rating - Q1_rating
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Q3_rating' is not defined
+>>>
+>>> Q1_votes = df['Votes'].quantile(0.25)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Votes'
+>>> Q3_votes = df['Votes'].quantile(0.75)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Votes'
+>>> IQR_votes = Q3_votes - Q1_votes
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Q3_votes' is not defined
+>>>
+>>> # Define outliers and replace them with NaN
+>>> df['Rating'] = np.where((df['Rating'] < (Q1_rating - 1.5 * IQR_rating)) | (df['Rating'] > (Q3_rating + 1.5 * IQR_rating)), np.nan, df['Rating'])
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> df['Votes'] = np.where((df['Votes'] < (Q1_votes - 1.5 * IQR_votes)) | (df['Votes'] > (Q3_votes + 1.5 * IQR_votes)), np.nan, df['Votes'])
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Votes'
+>>>
+>>> # You can then decide how to handle these NaNs. For example, you could remove these rows or fill them with the median value.
+>>> import numpy as np
+>>>
+>>> # Assuming df is your DataFrame and 'Rating' and 'Votes' are your columns
+>>>
+>>> # Calculate IQR for 'Rating' and 'Votes'
+>>> Q1_rating = df['Rating'].quantile(0.25)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> Q3_rating = df['Rating'].quantile(0.75)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> IQR_rating = Q3_rating - Q1_rating
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Q3_rating' is not defined
+>>>
+>>> Q1_votes = df['Votes'].quantile(0.25)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Votes'
+>>> Q3_votes = df['Votes'].quantile(0.75)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Votes'
+>>> IQR_votes = Q3_votes - Q1_votes
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Q3_votes' is not defined
+>>>
+>>> # Define outliers and replace them with NaN
+>>> df['Rating'] = np.where((df['Rating'] < (Q1_rating - 1.5 * IQR_rating)) | (df['Rating'] > (Q3_rating + 1.5 * IQR_rating)), np.nan, df['Rating'])
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> df['Votes'] = np.where((df['Votes'] < (Q1_votes - 1.5 * IQR_votes)) | (df['Votes'] > (Q3_votes + 1.5 * IQR_votes)), np.nan, df['Votes'])
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Votes'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Votes'
+>>>
+>>> # You can then decide how to handle these NaNs. For example, you could remove these rows or fill them with the median value.
+>>> import numpy as np
+>>> Q1_rating = df ['Rating'].quantile(0.25)
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> Q1_rating = df['rating'].quantile(0.25)
+>>> Q3_rating = df['rating'].quantile(0.75)
+>>> IQR_rating = Q3_rating - Q1_rating
+>>> Q1_votes = df['votes'].quantile(0.25)
+>>> Q3_votes = df['votes'].quantile(0.75)
+>>> IQR_votes = Q3_votes - Q1_votes
+>>> df['rating'] = np.where((df['rating']< (Q1_rating - 1.5*IQR_rating)) | (df['rating]>(Q3_rating + 1.5*IQR_rating)),np.nan, df['rating'])
+  File "<stdin>", line 1
+    df['rating'] = np.where((df['rating']< (Q1_rating - 1.5*IQR_rating)) | (df['rating]>(Q3_rating + 1.5*IQR_rating)),np.nan, df['rating'])
+                                                                                                                                        ^
+SyntaxError: unterminated string literal (detected at line 1)
+>>> df['rating'] = np.where((df['rating'] < (Q1_rating - 1.5 * IQR_rating)) | (df['rating'] > (Q3_rating + 1.5 * IQR_rating)), np.nan, df['rating'])
+>>> df['votes'] = np.where((df['votes'] < (Q1_votes - 1.5 * IQR_votes)) | (df['votes'] > (Q3_votes + 1.5 * IQR_votes)), np.nan, df['votes'])
+>>> # Select features and target
+>>> X = df[['Duration', 'Genre', 'Director']]  # Features
+>>> y = df['Rating']  # Target
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> x = df[['Duration', 'Genre', 'Director']]
+>>> y = df['Rating']
+Traceback (most recent call last):
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 153, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 182, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Rating'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Rating'
+>>> y = df['rating']
+>>> from sklearn.model_selection import train_test_split
+>>>
+>>> # Assuming X is your features and y is your target
+>>> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+>>> from sklearn.linear_model import LinearRegression
+>>> from sklearn.metrics import mean_squared_error, r2_score
+>>>
+>>> # Create a model object
+>>> model = LinearRegression()
+>>>
+>>> # Train the model
+>>> model.fit(X_train, y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 1351, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\linear_model\_base.py", line 578, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 1192, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 951, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_array_api.py", line 521, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 2150, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '141 min'
+>>>
+>>> # Make predictions
+>>> y_pred = model.predict(X_test)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\linear_model\_base.py", line 286, in predict
+    return self._decision_function(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\linear_model\_base.py", line 269, in _decision_function
+    X = self._validate_data(X, accept_sparse=["csr", "csc", "coo"], reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 951, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_array_api.py", line 521, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 2150, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '123 min'
+>>>
+>>> # Evaluate the model
+>>> mse = mean_squared_error(y_test, y_pred)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'y_pred' is not defined
+>>> r2 = r2_score(y_test, y_pred)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'y_pred' is not defined
+>>>
+>>> print(f'Mean Squared Error: {mse}')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'mse' is not defined
+>>> print(f'R-squared: {r2}')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'r2' is not defined
+>>> model = LinearRegression()
+>>> model.fit(X_train, y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 1351, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\linear_model\_base.py", line 578, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 1192, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 951, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_array_api.py", line 521, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 2150, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '141 min'
+>>> # Remove 'min' and convert to numeric
+>>> df['Duration'] = df['Duration'].str.replace(' min', '')
+>>> df['Duration'] = pd.to_numeric(df['Duration'])
+>>>
+>>> model = LinearRegression()
+>>> model.fit(x_train, y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'x_train' is not defined. Did you mean: 'X_train'?
+>>> yes
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'yes' is not defined
+>>> model.fit(X_train, Y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Y_train' is not defined. Did you mean: 'y_train'?
+>>> model.fit(X_train, y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 1351, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\linear_model\_base.py", line 578, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 1192, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 951, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_array_api.py", line 521, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 2150, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '141 min'
+>>> # Remove 'min' and convert to numeric
+>>> df['Duration'] = df['Duration'].str.replace(' min', '')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 6293, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 191, in __init__
+    self._inferred_dtype = self._validate(data)
+                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 245, in _validate
+    raise AttributeError("Can only use .str accessor with string values!")
+AttributeError: Can only use .str accessor with string values!. Did you mean: 'std'?
+>>> df['Duration'] = pd.to_numeric(df['Duration'])
+>>> df['Duration'] = pd.to_numeric(df['Duration'])
+>>> de['Duration'] = df['Duration'].str.replace(' min', '')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 6293, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 191, in __init__
+    self._inferred_dtype = self._validate(data)
+                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 245, in _validate
+    raise AttributeError("Can only use .str accessor with string values!")
+AttributeError: Can only use .str accessor with string values!. Did you mean: 'std'?
+>>> # Convert 'Duration' to string type
+>>> df['Duration'] = df['Duration'].astype(str)
+>>>
+>>> # Now you can apply string methods
+>>> df['Duration'] = df['Duration'].str.replace(' min', '')
+>>> df['Duration'] = pd.to_numeric(df['Duration']
+... kjh
+  File "<stdin>", line 1
+    df['Duration'] = pd.to_numeric(df['Duration']
+                                   ^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+>>> model.fit(X_train, y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 1351, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\linear_model\_base.py", line 578, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 1192, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 951, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_array_api.py", line 521, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 2150, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '141 min'
+>>> # Assuming 'Duration' is of string type and contains ' min'
+>>> df['Duration'] = df['Duration'].str.replace(' min', '')
+>>> df['Duration'] = pd.to_numeric(df['Duration'])
+Traceback (most recent call last):
+  File "lib.pyx", line 2391, in pandas._libs.lib.maybe_convert_numeric
+ValueError: Unable to parse string "nan"
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\tools\numeric.py", line 232, in to_numeric
+    values, new_mask = lib.maybe_convert_numeric(  # type: ignore[call-overload]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib.pyx", line 2433, in pandas._libs.lib.maybe_convert_numeric
+ValueError: Unable to parse string "nan" at position 0
+>>> # Remove ' min' from 'Duration'
+>>> df['Duration'] = df['Duration'].str.replace(' min', '')
+>>>
+>>> # Convert 'Duration' to numeric, making 'nan' values NaN
+>>> df['Duration'] = pd.to_numeric(df['Duration'], errors='coerce')
+>>> df['Duration'] = df['Duration'].fillna(df['Duration'].median())
+>>> model.fit(X_train,y_train)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 1351, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\linear_model\_base.py", line 578, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 1192, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 951, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_array_api.py", line 521, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 2150, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '141 min'
+>>> # Remove 'min' and convert to numeric
+>>> df['Duration'] = df['Duration'].str.replace(' min', '')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 6293, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 191, in __init__
+    self._inferred_dtype = self._validate(data)
+                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 245, in _validate
+    raise AttributeError("Can only use .str accessor with string values!")
+AttributeError: Can only use .str accessor with string values!. Did you mean: 'std'?
+>>> df['Duration'] = pd.to_numeric(df['Duration'])
+>>> # Assuming 'Duration' is of string type and contains ' min'
+>>> df['Duration'] = df['Duration'].str.replace(' min', '')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 6293, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 191, in __init__
+    self._inferred_dtype = self._validate(data)
+                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 245, in _validate
+    raise AttributeError("Can only use .str accessor with string values!")
+AttributeError: Can only use .str accessor with string values!. Did you mean: 'std'?
+>>> df['Duration'] = pd.to_numeric(df['Duration'])
+>>> # Assuming 'Duration' is of string type and contains ' min'
+>>> df['Duration'] = df['Duration'].str.replace(' min', '')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py", line 6293, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 191, in __init__
+    self._inferred_dtype = self._validate(data)
+                           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abhishek Choudhury\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\strings\accessor.py", line 245, in _validate
+    raise AttributeError("Can only use .str accessor with string values!")
+AttributeError: Can only use .str accessor with string values!. Did you mean: 'std'?
+>>> df['Duration'] = pd.to_numeric(df['Duration'])
+>>>from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Create a model object
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print(f'Mean Squared Error: {mse}')
+print(f'R-squared: {r2}')
